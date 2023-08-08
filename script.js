@@ -1,3 +1,59 @@
+ 
+ 
+ 
+ // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDo_tMQhSN7ld3PAfpi_AumGoBIwXiMQ9A",
+    authDomain: "contactform-ef11d.firebaseapp.com",
+    databaseURL: "https://contactform-ef11d-default-rtdb.firebaseio.com",
+    projectId: "contactform-ef11d",
+    storageBucket: "contactform-ef11d.appspot.com",
+    messagingSenderId: "947486115147",
+    appId: "1:947486115147:web:e5d1047f980216c94614ce"
+  };
+
+
+  // initialize firebase 
+  firebase.initializeApp(firebaseConfig);
+
+  // refebase firebase 
+
+  const contactFormDB = firebase.database().ref('contactAraz');
+
+document.getElementById('contactForm').addEventListener('submit', submitForm);
+
+function submitForm(e) {
+  e.preventDefault();
+
+    var name = getElementVal('name');
+    var address = getElementVal('address');
+    var number = getElementVal('number');
+    var subject = getElementVal('subject');
+    var texera = getElementVal('texera')
+
+    console.log(name, address, number, subject, texera);
+    saveMasseges(name, address, number, subject, texera);
+  }
+
+  const saveMasseges = (name, address, number, subject, texera) => {
+    var newContatForm = contactFormDB.push();
+
+
+    newContatForm.set ({
+      name : name,
+      address: address,
+      number: number,
+      subject: subject,
+      texera: texera
+    })
+  };
+
+  const getElementVal = (id) => {
+    return document.getElementById(id).value;
+  }
+
+
+
 // toggle icon navbar 
 
 let menuIcon = document.querySelector('#menu-icon');

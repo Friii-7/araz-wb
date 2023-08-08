@@ -7,6 +7,10 @@
     <title>Araz-web</title>
     <link rel="stylesheet" href="styles.css">
 
+
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js"></script>
+
     <!-- box icons-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -239,31 +243,31 @@
         <h2 class="heading">Contact <span>Me!</span></h2>
 
 
-        <form action="#">
+        <form action="#" id="contactForm">
             <div class="input-box">
                 <div class="input-field">
-                    <input type="text" placeholder="Full Name" required>
+                    <input type="text" placeholder="Full Name" id="name" required>
                     <span class="focus"></span>
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="Email Address" required>
+                    <input type="text" placeholder="Email Address" id="address" required>
                     <span class="focus"></span>
                 </div>
             </div>
 
             <div class="input-box">
                 <div class="input-field">
-                    <input type="number" placeholder="Mobile Number" required>
+                    <input type="number" placeholder="Mobile Number" id="number" required>
                     <span class="focus"></span>
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="Email Subject" required>
+                    <input type="text" placeholder="Email Subject" id="subject" required>
                     <span class="focus"></span>
                 </div>
             </div>
 
             <div class="texrarea-field">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Your Massage" required></textarea>
+                <textarea name="" id="texera" cols="30" rows="10" placeholder="Your Massage" required></textarea>
                 <span class="focus"></span>
             </div>
 
@@ -290,7 +294,9 @@
     </footer>
 
 
-    <script src="script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="./script.js" type="module"></script>
 </body>
 
 </html>
