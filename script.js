@@ -33,6 +33,14 @@ function submitForm(e) {
 
     console.log(name, address, number, subject, texera);
     saveMasseges(name, address, number, subject, texera);
+
+    document.querySelector('.alert').style.display = 'block';
+
+    setTimeout(() => {
+      document.querySelector('.alert').style.display= 'none';
+    }, 3000);
+
+    document.getElementById('contactForm').reset()
   }
 
   const saveMasseges = (name, address, number, subject, texera) => {
@@ -51,6 +59,7 @@ function submitForm(e) {
   const getElementVal = (id) => {
     return document.getElementById(id).value;
   }
+
 
 
 
