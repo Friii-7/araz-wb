@@ -13,55 +13,58 @@
   };
 
 
-  // initialize firebase 
-  firebase.initializeApp(firebaseConfig);
-
-  // refebase firebase 
-
-  const contactFormDB = firebase.database().ref('contactAraz');
+ // Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const contactFormDB = firebase.database().ref('contactAraz');
 
 document.getElementById('contactForm').addEventListener('submit', submitForm);
 
 function submitForm(e) {
   e.preventDefault();
 
-    var name = getElementVal('name');
-    var address = getElementVal('address');
-    var number = getElementVal('number');
-    var subject = getElementVal('subject');
-    var texera = getElementVal('texera')
+  const name = getElementVal('name');
+  const address = getElementVal('address');
+  const number = getElementVal('number');
+  const subject = getElementVal('subject');
+  const texera = getElementVal('texera');
 
-    console.log(name, address, number, subject, texera);
-    saveMasseges(name, address, number, subject, texera);
+  console.log(name, address, number, subject, texera);
+  saveMessages(name, address, number, subject, texera);
 
-    document.querySelector('.alert').style.display = 'block';
+  const alertBox = document.querySelector('.alert');
+  alertBox.style.display = 'block';
 
-    setTimeout(() => {
-      document.querySelector('.alert').style.display= 'none';
-    }, 3000);
+  setTimeout(() => {
+    alertBox.style.display = 'none';
+  }, 3000);
 
-    document.getElementById('contactForm').reset()
-  }
+  document.getElementById('contactForm').reset();
+}
 
-  const saveMasseges = (name, address, number, subject, texera) => {
-    var newContatForm = contactFormDB.push();
+function saveMessages(name, address, number, subject, texera) {
+  const newContactForm = contactFormDB.push();
+  newContactForm.set({
+    name,
+    address,
+    number,
+    subject,
+    texera
+  });
+}
 
-
-    newContatForm.set ({
-      name : name,
-      address: address,
-      number: number,
-      subject: subject,
-      texera: texera
-    })
-  };
-
-  const getElementVal = (id) => {
-    return document.getElementById(id).value;
-  }
-
+function getElementVal(id) {
+  return document.getElementById(id).value;
+}
 
 
+
+/////////email 
+
+
+
+    function resetForm() {
+        document.getElementById('contactForm').reset();
+    }
 
 // toggle icon navbar 
 
@@ -104,4 +107,6 @@ window.onscroll = () => {
         menuIcon.classList.remove('bx-x'); 
         navbar.classList.remove('active'); 
 }
+
+
 

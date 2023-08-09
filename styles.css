@@ -82,15 +82,18 @@ section {
     padding: 10rem 9% 2rem;
 }
 
+
 .home {
     display: flex;
     align-items: center;
     padding: 0 9%;
-    background: url(./image/foto2.png) no-repeat;
+    /* background: url(./image/foto2.png) no-repeat;
     background-size: 120vh 700px;
     left: 10px;
-    background-position: right;
+    background-position: right; */
 }
+
+
 
 .home-content {
     max-width: 60rem;

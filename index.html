@@ -8,9 +8,6 @@
     <link rel="stylesheet" href="styles.css">
 
 
-    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js"></script>
-
     <!-- box icons-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -69,7 +66,6 @@
             <a href="https://api.whatsapp.com/send?phone=573015877666" target="_blank"><i
                     class='bx bxl-whatsapp'></i></a>
         </div>
-
 
         <div class="home-imgHover"></div>
 
@@ -244,31 +240,31 @@
         <div class="alert">Your message sent</div>
 
 
-        <form action="#" id="contactForm">
+        <form target="_blank" action="https://formsubmit.co/farzinjimenez92@gmail.com" method="POST" id="contactForm">
             <div class="input-box">
                 <div class="input-field">
-                    <input type="text" placeholder="Full Name" id="name" required>
+                    <input type="text" placeholder="Full Name" id="name" name="name" required>
                     <span class="focus"></span>
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="Email Address" id="address" required>
+                    <input type="text" placeholder="Email Address" id="address" name="address" required>
                     <span class="focus"></span>
                 </div>
             </div>
 
             <div class="input-box">
                 <div class="input-field">
-                    <input type="number" placeholder="Mobile Number" id="number" required>
+                    <input type="number" placeholder="Mobile Number" id="number" name="number" required>
                     <span class="focus"></span>
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="Email Subject" id="subject" required>
+                    <input type="text" placeholder="Email Subject" id="subject" name="subject" required>
                     <span class="focus"></span>
                 </div>
             </div>
 
             <div class="texrarea-field">
-                <textarea name="" id="texera" cols="30" rows="10" placeholder="Your Massage" required></textarea>
+                <textarea name="texera" id="texera" cols="30" rows="10" placeholder="Your Message" required></textarea>
                 <span class="focus"></span>
             </div>
 
@@ -276,6 +272,8 @@
                 <button type="submit" class="btn">Submit</button><br />
             </div>
         </form>
+
+
     </section>
 
 
@@ -297,7 +295,11 @@
 
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
     <script src="./script.js" type="module"></script>
+
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
 </body>
 
 </html>
